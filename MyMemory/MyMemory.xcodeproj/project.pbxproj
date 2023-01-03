@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EAE2872B2963A62700220268 /* MemoListVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2872A2963A62700220268 /* MemoListVCTableViewController.swift */; };
+		EAE2872D2963A65E00220268 /* MemoFormVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2872C2963A65E00220268 /* MemoFormVCViewController.swift */; };
+		EAE2872F2963A67700220268 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2872E2963A67700220268 /* MemoReadVC.swift */; };
+		EAE287332963A74900220268 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE287322963A74900220268 /* MemoCell.swift */; };
+		EAE287352963A7A800220268 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE287342963A7A800220268 /* MemoData.swift */; };
 		EAE3C787296182560028779D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C786296182560028779D /* AppDelegate.swift */; };
 		EAE3C789296182560028779D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C788296182560028779D /* SceneDelegate.swift */; };
 		EAE3C78E296182560028779D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE3C78C296182560028779D /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EAE2872A2963A62700220268 /* MemoListVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVCTableViewController.swift; sourceTree = "<group>"; };
+		EAE2872C2963A65E00220268 /* MemoFormVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVCViewController.swift; sourceTree = "<group>"; };
+		EAE2872E2963A67700220268 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
+		EAE287322963A74900220268 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		EAE287342963A7A800220268 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 		EAE3C783296182560028779D /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE3C786296182560028779D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE3C788296182560028779D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +69,11 @@
 				EAE3C786296182560028779D /* AppDelegate.swift */,
 				EAE3C788296182560028779D /* SceneDelegate.swift */,
 				EAE3C78C296182560028779D /* Main.storyboard */,
+				EAE287322963A74900220268 /* MemoCell.swift */,
+				EAE2872A2963A62700220268 /* MemoListVCTableViewController.swift */,
+				EAE2872C2963A65E00220268 /* MemoFormVCViewController.swift */,
+				EAE2872E2963A67700220268 /* MemoReadVC.swift */,
+				EAE287342963A7A800220268 /* MemoData.swift */,
 				EAE3C792296182570028779D /* Assets.xcassets */,
 				EAE3C794296182570028779D /* LaunchScreen.storyboard */,
 				EAE3C797296182570028779D /* Info.plist */,
@@ -138,6 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE287332963A74900220268 /* MemoCell.swift in Sources */,
+				EAE287352963A7A800220268 /* MemoData.swift in Sources */,
+				EAE2872D2963A65E00220268 /* MemoFormVCViewController.swift in Sources */,
+				EAE2872B2963A62700220268 /* MemoListVCTableViewController.swift in Sources */,
+				EAE2872F2963A67700220268 /* MemoReadVC.swift in Sources */,
 				EAE3C791296182560028779D /* MyMemory.xcdatamodeld in Sources */,
 				EAE3C787296182560028779D /* AppDelegate.swift in Sources */,
 				EAE3C789296182560028779D /* SceneDelegate.swift in Sources */,
