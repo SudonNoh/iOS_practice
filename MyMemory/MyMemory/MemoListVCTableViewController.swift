@@ -12,19 +12,17 @@ class MemoListVCTableViewController: UITableViewController {
 
     // 화면이 나타날 때마다 호출되는 메소드
     override func viewWillAppear(_ animated: Bool) {
-        print(1)
         self.tableView.reloadData()
     }
     
     // 테이블 행의 개수를 결정하는 메소드
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(2)
-        return self.appDelegate.memolist.count
+        let count = self.appDelegate.memolist.count
+        return count
     }
     
     // 테이블 행을 구성하는 메소드
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(3)
         // 1. memolist 배열 데이터에서 주어진 행에 맞는 데이터를 꺼낸다.
         let row = self.appDelegate.memolist[indexPath.row]
         
@@ -50,5 +48,16 @@ class MemoListVCTableViewController: UITableViewController {
     
     // 테이블의 특정 행이 선택되었을 때 호출되는 메소드, 선택된 행의 정보는 indexPath에 담겨 전달된다.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 1. memolist 배열에서 선택된 행에 맞는 데이터를 꺼낸다.
+        let row = self.appDelegate.memolist[indexPath.row]
+        
+        // 2. 상세 화면의 인스턴스를 생성한다.
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoRead") as? MemoReadVC else {
+            return
+        }
+        
+        // 3. 값을 전달한 다음, 상세 화면으로 이동한다.
+        vc.param = row
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
