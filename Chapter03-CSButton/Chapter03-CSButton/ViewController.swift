@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         let circleBtn = CSButton(type: .circle)
         circleBtn.frame = CGRect(x: 200, y: 200, width: 150, height: 30)
         self.view.addSubview(circleBtn)
+        
+        circleBtn.style = .rect
     }
 }
 

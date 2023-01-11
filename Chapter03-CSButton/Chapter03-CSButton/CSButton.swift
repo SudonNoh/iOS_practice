@@ -50,6 +50,7 @@ class CSButton: UIButton {
             self.layer.cornerRadius = 0
             self.setTitleColor(.white, for: .normal)
             self.setTitle("Rect Button", for: .normal)
+            
         case .circle :
             self.backgroundColor = .red
             self.layer.borderColor = UIColor.blue.cgColor
@@ -57,5 +58,35 @@ class CSButton: UIButton {
             self.layer.cornerRadius = 50
             self.setTitle("Circle Button", for: .normal)
         }
+        
+        self.addTarget(self, action: #selector(counting(_:)), for: .touchUpInside)
+    }
+    
+    /* style을 변경하기 위해 정의한 부분 */
+    var style: CSButtonType = .rect {
+        didSet {
+            switch style {
+            case .rect :
+                self.backgroundColor = .black
+                self.layer.borderColor = UIColor.black.cgColor
+                self.layer.borderWidth = 2
+                self.layer.cornerRadius = 0
+                self.setTitleColor(.white, for: .normal)
+                self.setTitle("Rect Button", for: .normal)
+                
+            case .circle :
+                self.backgroundColor = .red
+                self.layer.borderColor = UIColor.blue.cgColor
+                self.layer.borderWidth = 2
+                self.layer.cornerRadius = 50
+                self.setTitle("Circle Button", for: .normal)
+            }
+        }
+    }
+    
+    @objc func counting(_ sender: UIButton) {
+        sender.tag = sender.tag + 1
+        self.style = self.style == .rect ? .circle : .rect
+        sender.setTitle("\(sender.tag)번째 클릭", for: .normal)
     }
 }
