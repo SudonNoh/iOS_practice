@@ -11,7 +11,7 @@
         <!--List-->
         <scene sceneID="FcZ-GQ-3vG">
             <objects>
-                <tableViewController title="List" id="teq-yI-hEW" customClass="MemoListVCTableViewController" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="List" id="teq-yI-hEW" customClass="MemoListVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="85v-AI-bpM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,18 @@
                         <view key="tableFooterView" contentMode="scaleToFill" id="WoM-Ft-ZY0">
                             <rect key="frame" x="0.0" y="238" width="393" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ug-Vf-jkp" customClass="CSLogButton" customModule="MyMemory" customModuleProvider="target">
+                                    <rect key="frame" x="177" y="7" width="39" height="30"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="더보기"/>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="7Ug-Vf-jkp" firstAttribute="centerX" secondItem="WoM-Ft-ZY0" secondAttribute="centerX" id="Bf5-d4-zpu"/>
+                                <constraint firstItem="7Ug-Vf-jkp" firstAttribute="centerY" secondItem="WoM-Ft-ZY0" secondAttribute="centerY" id="zMR-4z-9o6"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="LmR-fi-T4h" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
@@ -164,7 +175,7 @@
         <!--Edit-->
         <scene sceneID="E8C-aJ-jg3">
             <objects>
-                <viewController title="Edit" id="72J-hi-kqi" customClass="MemoFormVCViewController" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit" id="72J-hi-kqi" customClass="MemoFormVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jhj-na-34S">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

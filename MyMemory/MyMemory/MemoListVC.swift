@@ -1,5 +1,5 @@
 //
-//  MemoListVCTableViewController.swift
+//  MemoListVC.swift
 //  MyMemory
 //
 //  Created by Sudon Noh on 2023/01/03.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemoListVCTableViewController: UITableViewController {
+class MemoListVC: UITableViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     // 화면이 나타날 때마다 호출되는 메소드
