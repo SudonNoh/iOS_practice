@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oje-Fd-zOi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bAK-Uv-3IR">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -175,7 +175,7 @@
         <!--Edit-->
         <scene sceneID="E8C-aJ-jg3">
             <objects>
-                <viewController title="Edit" id="72J-hi-kqi" customClass="MemoFormVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoForm" title="Edit" id="72J-hi-kqi" customClass="MemoFormVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jhj-na-34S">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,6 +233,34 @@
             </objects>
             <point key="canvasLocation" x="925.95419847328242" y="-35.211267605633807"/>
         </scene>
+        <!--Side BarVC-->
+        <scene sceneID="0Kg-QA-Rk9">
+            <objects>
+                <tableViewController id="Z0V-S3-7Te" customClass="SideBarVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aHX-Oc-4mW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qJ2-S8-aCb">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qJ2-S8-aCb" id="5un-O0-ZLE">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Z0V-S3-7Te" id="vLA-O8-Xze"/>
+                            <outlet property="delegate" destination="Z0V-S3-7Te" id="7b0-3c-WBR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRb-yb-gI5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-970" y="773"/>
+        </scene>
         <!--Detail-->
         <scene sceneID="1gt-dz-hW1">
             <objects>
@@ -288,6 +316,38 @@
             </objects>
             <point key="canvasLocation" x="-65" y="773"/>
         </scene>
+        <!--Profil-->
+        <scene sceneID="PJ8-R5-uJ4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9k-ne-RsV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController title="Profil" id="rWE-5n-QB9" customClass="ProfileVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                    <string key="storyboardIdentifier" base64-UTF8="YES">
+CA
+</string>
+                    <navigationItem key="navigationItem" title="Title" id="Gt9-TS-sgd"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1792" y="773"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="pcD-Kd-h8a">
+            <objects>
+                <viewController id="bAK-Uv-3IR" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B3M-MS-b54">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7rr-rJ-iL6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="oje-Fd-zOi" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="c2T-ZZ-gGF"/>
+                        <segue destination="Z0V-S3-7Te" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="7zn-Zp-rCc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9MD-Vj-22H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1874" y="-35"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="63T-sX-jyc">
             <objects>
@@ -303,6 +363,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgN-DI-wfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-969" y="-35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="emf-84-nyt">
+            <objects>
+                <navigationController storyboardIdentifier="_Profile" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="l4P-89-Maf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B9j-bc-V7U">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rWE-5n-QB9" kind="relationship" relationship="rootViewController" id="s7v-GP-Quw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQS-PW-bKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="773"/>
         </scene>
     </scenes>
     <resources>
