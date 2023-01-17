@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA650BBD2976D79C0094AF90 /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA650BBC2976D79C0094AF90 /* UserInfo.plist */; };
 		EA8C04F029767A4B00B03104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C04EF29767A4B00B03104 /* AppDelegate.swift */; };
 		EA8C04F229767A4B00B03104 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C04F129767A4B00B03104 /* SceneDelegate.swift */; };
 		EA8C04F429767A4B00B03104 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C04F329767A4B00B03104 /* ListViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA650BBC2976D79C0094AF90 /* UserInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
 		EA8C04EC29767A4B00B03104 /* Chapter05-CustomPlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chapter05-CustomPlist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8C04EF29767A4B00B03104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA8C04F129767A4B00B03104 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				EA8C04EF29767A4B00B03104 /* AppDelegate.swift */,
 				EA8C04F129767A4B00B03104 /* SceneDelegate.swift */,
 				EA8C04F329767A4B00B03104 /* ListViewController.swift */,
+				EA650BBC2976D79C0094AF90 /* UserInfo.plist */,
 				EA8C04F529767A4B00B03104 /* Main.storyboard */,
 				EA8C04F829767A4C00B03104 /* Assets.xcassets */,
 				EA8C04FA29767A4C00B03104 /* LaunchScreen.storyboard */,
@@ -128,6 +131,7 @@
 				EA8C04FC29767A4C00B03104 /* LaunchScreen.storyboard in Resources */,
 				EA8C04F929767A4C00B03104 /* Assets.xcassets in Resources */,
 				EA8C04F729767A4B00B03104 /* Main.storyboard in Resources */,
+				EA650BBD2976D79C0094AF90 /* UserInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
