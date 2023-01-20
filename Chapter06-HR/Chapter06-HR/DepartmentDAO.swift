@@ -10,11 +10,10 @@ class DepartmentDAO {
         
         // 2. 샌드박스 내 문서 디렉터리에서 데이터베이스 파일 경로를 확인
         let docPath = fileMgr.urls(for: .documentDirectory, in: .userDomainMask).first
-        print("DepartmentDAO")
-        let dbPath = docPath!.appending(path: "hr.sqlite").pathComponents[0]
-        let dbPath2 = docPath!.appendingPathComponent("hr.sqlite").path
-        print("dbPath : \(dbPath)")
-        print("dbPath2 : \(dbPath2)")
+        
+        let dbPath = docPath!.appending(component: "hr.sqlite").path()
+        // *deprecated
+        // let dbPath = docPath!.appendingPathComponent("hr.sqlite").path
         
         // 3. 샌드박스 경로에 파일이 없다면 메인 번들에 만들어 둔 hr.sqlite를 가져와 복사
         if fileMgr.fileExists(atPath: dbPath) == false {
@@ -101,7 +100,7 @@ class DepartmentDAO {
                 INSERT INTO department (depart_title, depart_addr)
                 VALUES ( ? , ? )
                 """
-            try self.fmdb.executeQuery(sql, values: [title!, addr!])
+            try self.fmdb.executeUpdate(sql, values: [title!, addr!])
             return true
         } catch let error as NSError {
             print("Insert Error : \(error.localizedDescription)")
@@ -113,7 +112,7 @@ class DepartmentDAO {
     func remove(departCd: Int) -> Bool {
         do {
             let sql = "DELETE FROM department WHERE depart_cd= ? "
-            try self.fmdb.executeQuery(sql, values: [departCd])
+            try self.fmdb.executeUpdate(sql, values: [departCd])
             return true
         } catch let error as NSError {
             print("DELETE Error : \(error.localizedDescription)")
