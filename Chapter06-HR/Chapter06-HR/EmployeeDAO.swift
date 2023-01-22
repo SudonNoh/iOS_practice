@@ -54,16 +54,21 @@ class EmployeeDAO {
         self.fmdb.close()
     }
     
-    func find() -> [EmployeeVO] {
+    // 매개변수의 기본값이 0으로 지정되면서 find 함수는 두 가지 형태로 실행될 수 있다.
+    // 매개변수를 받는 경우와 매개변수를 받지 않는 경우
+    func find(departCd: Int = 0) -> [EmployeeVO] {
         // 반환할 데이터를 담을 [EmployeeVO] 타입의 객체 정의
         var employeeList = [EmployeeVO]()
         
         do {
+            // 1. 조건절 정의
+            let condition = departCd == 0 ? "" : "WHERE employee.depart_cd = \(departCd)"
             let sql =
                 """
                 SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
                 FROM employee
                 JOIN department On department.depart_cd = employee.depart_cd
+                \(condition)
                 ORDER BY employee.depart_cd ASC
                 """
             
@@ -150,6 +155,24 @@ class EmployeeDAO {
             return true
         } catch let error as NSError {
             print("Delete Error : \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    func editState(empCd: Int, stateCd: EmpStateType) -> Bool {
+        do {
+            let sql = "UPDATE employee SET state_cd = ? WHERE emp_cd = ?"
+            
+            // 인자값 배열
+            var params = [Any]()
+            params.append(stateCd.rawValue) // 재직 상태 코드 0, 1, 2
+            params.append(empCd) // 사원코드
+            
+            // 업데이트 실행
+            try self.fmdb.executeUpdate(sql, values: params)
+            return true
+        } catch let error as NSError {
+            print("Update Error : \(error.localizedDescription)")
             return false
         }
     }
