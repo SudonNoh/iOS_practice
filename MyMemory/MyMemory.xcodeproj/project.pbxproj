@@ -39,6 +39,7 @@
 		EAE3C791296182560028779D /* MyMemory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C78F296182560028779D /* MyMemory.xcdatamodeld */; };
 		EAE3C793296182570028779D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE3C792296182570028779D /* Assets.xcassets */; };
 		EAE3C796296182570028779D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE3C794296182570028779D /* LaunchScreen.storyboard */; };
+		EAE6A73B2987B8B900973125 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A73A2987B8B900973125 /* MemoDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		EAE3C792296182570028779D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAE3C795296182570028779D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAE3C797296182570028779D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE6A73A2987B8B900973125 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				EABE4C09296F863200A2625D /* CSLogButton.swift */,
 				EAE2872E2963A67700220268 /* MemoReadVC.swift */,
 				EAE287342963A7A800220268 /* MemoData.swift */,
+				EAE6A73A2987B8B900973125 /* MemoDAO.swift */,
 				EA89D2962977B931008FAFEE /* TutorialContentsVC.swift */,
 				EA1BDB6B2977C23600539947 /* TutorialMasterVC.swift */,
 				EA89D2922977AE63008FAFEE /* Tutorial.storyboard */,
@@ -253,6 +256,7 @@
 				EA2AB41F29704E5500A3F366 /* SideBarVC.swift in Sources */,
 				EAE3C791296182560028779D /* MyMemory.xcdatamodeld in Sources */,
 				EA1BDB6C2977C23600539947 /* TutorialMasterVC.swift in Sources */,
+				EAE6A73B2987B8B900973125 /* MemoDAO.swift in Sources */,
 				EA2AB41D2970479600A3F366 /* SWRevealViewController.m in Sources */,
 				EAE3C787296182560028779D /* AppDelegate.swift in Sources */,
 				EA650BBF2976DABD0094AF90 /* UserInfoManager.swift in Sources */,

@@ -16,6 +16,7 @@ class MemoFormVC:
     // 제목을 직접 입력받지 않고, 내용의 첫 줄을 추출하여 제목으로 사용
     // subject는 제목을 저장하는 역할을 담당
     var subject: String!
+    lazy var dao = MemoDAO()
     
     @IBOutlet weak var contents: UITextView!
     @IBOutlet weak var preview: UIImageView!
@@ -47,8 +48,13 @@ class MemoFormVC:
         data.regdate = Date() // 작성 시각
         
         // 앱 델리게이트 객체를 읽어온 다음, memolist 배열에 MemoData 객체를 추가한다.
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memolist.append(data)
+        // let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        // appDelegate.memolist.append(data)
+        // ⬆️ 로직의 흐름상 코어 데이터와 memolist 배열 양쪽에 모두 값을 추가할 필요는 없다.
+        // 어차피 memolist 배열 역시 코어 데이터를 통해 값을 읽어와야 하기 때문이다.
+        
+        // 코어 데이터에 메모 데이터를 추가한다.
+        self.dao.insert(data)
         
         // 작성폼 화면을 종료하고, 이전 화면으로 돌아간다.
         _ = self.navigationController?.popViewController(animated: true)
