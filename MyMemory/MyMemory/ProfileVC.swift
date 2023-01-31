@@ -13,7 +13,12 @@ import Foundation
  지정되려면 해당 객체가 위 두 개의 델리게이트 프로토콜을 구현하고 있어야 합니다. 이들 프로토콜에는 필수 메소드가
  없습니다.
 */
-class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileVC:
+    UIViewController,
+    UITableViewDelegate,
+    UITableViewDataSource,
+    UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate {
     // 개인 정보 관리 매니저
     let uinfo = UserInfoManager()
     
@@ -99,7 +104,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         // self.view.bringSubviewToFront(self.profileImage)
         
         // 내비게이션 바 숨김처리
-        self.navigationController?.navigationBar.isHidden = true
+        // self.navigationController?.navigationBar.isHidden = true
         // 최초 화면 로딩 시 로그인 상태에 따라 적절히 로그인/로그아웃 버튼 출력
         self.drawBtn()
         
@@ -160,22 +165,17 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         // 알림창에 버튼 추가
         loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         loginAlert.addAction(UIAlertAction(title: "Login", style: .destructive) { (_) in
+            
             let account = loginAlert.textFields?[0].text ?? ""
             let passwd = loginAlert.textFields?[1].text ?? ""
             
-            if self.uinfo.login(account: account, passwd: passwd) {
-                // TODO: (로그인 성공 시 처리할 내용)
-                self.tv.reloadData() // 테이블 뷰를 갱신
-                // 다른 값들은 자동으로 tableView(_:cellForRowAt:) 에 의해서 업로드 된다.
-                // 하지만 이미지의 경우 테이블 뷰에 속하지 않기 때문에 매니저 객체로부터 직접 값을 받아 대입해 주어야 한다.
+            self.uinfo.login(account: account, passwd: passwd, success: {
+                self.tv.reloadData()
                 self.profileImage.image = self.uinfo.profile
                 self.drawBtn()
-            } else {
-                let msg = "로그인에 실패했습니다."
-                let alert = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-                self.present(alert, animated: false)
-            }
+            }, fail: { msg in
+                self.alert(msg)
+            })
         })
         self.present(loginAlert, animated: false)
     }
@@ -286,5 +286,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         }
         // 아래 구문이 없으면 이미지 피커 컨트롤러 창이 닫히지 않습니다.
         picker.dismiss(animated: true)
+    }
+    
+    @IBAction func backProfileVC(_ segue: UIStoryboardSegue) {
+        
     }
 }

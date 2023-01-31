@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2587E9F0AC6C22E79EB9786C /* Pods_MyMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D4DB70965EB8AD5D0FFB51 /* Pods_MyMemory.framework */; };
 		EA1BDB6C2977C23600539947 /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1BDB6B2977C23600539947 /* TutorialMasterVC.swift */; };
 		EA2AB41D2970479600A3F366 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AB41B2970479600A3F366 /* SWRevealViewController.m */; };
 		EA2AB41F29704E5500A3F366 /* SideBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2AB41E29704E5500A3F366 /* SideBarVC.swift */; };
@@ -40,9 +41,13 @@
 		EAE3C793296182570028779D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE3C792296182570028779D /* Assets.xcassets */; };
 		EAE3C796296182570028779D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE3C794296182570028779D /* LaunchScreen.storyboard */; };
 		EAE6A73B2987B8B900973125 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A73A2987B8B900973125 /* MemoDAO.swift */; };
+		EAFBE8362988ACB90008DB70 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFBE8352988ACB90008DB70 /* JoinVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4391AB537A3F6F39E0EC0699 /* Pods-MyMemory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMemory.release.xcconfig"; path = "Target Support Files/Pods-MyMemory/Pods-MyMemory.release.xcconfig"; sourceTree = "<group>"; };
+		A265E2312A6E7AB561D8CB67 /* Pods-MyMemory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMemory.debug.xcconfig"; path = "Target Support Files/Pods-MyMemory/Pods-MyMemory.debug.xcconfig"; sourceTree = "<group>"; };
+		E2D4DB70965EB8AD5D0FFB51 /* Pods_MyMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1BDB6B2977C23600539947 /* TutorialMasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
 		EA2AB41A2970479500A3F366 /* MyMemory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMemory-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA2AB41B2970479600A3F366 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 		EAE3C795296182570028779D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAE3C797296182570028779D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE6A73A2987B8B900973125 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
+		EAFBE8352988ACB90008DB70 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +93,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2587E9F0AC6C22E79EB9786C /* Pods_MyMemory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72D88F8B149D3C6BA56EC80D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2D4DB70965EB8AD5D0FFB51 /* Pods_MyMemory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B655F9AF01E886A8FA209C19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A265E2312A6E7AB561D8CB67 /* Pods-MyMemory.debug.xcconfig */,
+				4391AB537A3F6F39E0EC0699 /* Pods-MyMemory.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EABE4C0B296F8D6F00A2625D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +141,8 @@
 			children = (
 				EAE3C785296182560028779D /* MyMemory */,
 				EAE3C784296182560028779D /* Products */,
+				B655F9AF01E886A8FA209C19 /* Pods */,
+				72D88F8B149D3C6BA56EC80D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +162,7 @@
 				EA650BBE2976DABD0094AF90 /* UserInfoManager.swift */,
 				EAE3C788296182560028779D /* SceneDelegate.swift */,
 				EAE3C78C296182560028779D /* Main.storyboard */,
+				EAFBE8352988ACB90008DB70 /* JoinVC.swift */,
 				EA2E6979297153550050E85E /* ProfileVC.swift */,
 				EAE287322963A74900220268 /* MemoCell.swift */,
 				EAE2872A2963A62700220268 /* MemoListVC.swift */,
@@ -167,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAE3C79A296182570028779D /* Build configuration list for PBXNativeTarget "MyMemory" */;
 			buildPhases = (
+				1CE9AC292C76DB7F7503314A /* [CP] Check Pods Manifest.lock */,
 				EAE3C77F296182560028779D /* Sources */,
 				EAE3C780296182560028779D /* Frameworks */,
 				EAE3C781296182560028779D /* Resources */,
+				342375DA575006873782D236 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +269,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CE9AC292C76DB7F7503314A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyMemory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		342375DA575006873782D236 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMemory/Pods-MyMemory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMemory/Pods-MyMemory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyMemory/Pods-MyMemory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EAE3C77F296182560028779D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -259,6 +330,7 @@
 				EAE6A73B2987B8B900973125 /* MemoDAO.swift in Sources */,
 				EA2AB41D2970479600A3F366 /* SWRevealViewController.m in Sources */,
 				EAE3C787296182560028779D /* AppDelegate.swift in Sources */,
+				EAFBE8362988ACB90008DB70 /* JoinVC.swift in Sources */,
 				EA650BBF2976DABD0094AF90 /* UserInfoManager.swift in Sources */,
 				EA89D2972977B931008FAFEE /* TutorialContentsVC.swift in Sources */,
 				EAE3C789296182560028779D /* SceneDelegate.swift in Sources */,
@@ -403,6 +475,7 @@
 		};
 		EAE3C79B296182570028779D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A265E2312A6E7AB561D8CB67 /* Pods-MyMemory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -437,6 +510,7 @@
 		};
 		EAE3C79C296182570028779D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4391AB537A3F6F39E0EC0699 /* Pods-MyMemory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

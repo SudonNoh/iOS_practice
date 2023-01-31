@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        // 페이지 인디ㅔ이터 설정을 위한 외형 템플릿 구현
+        // 페이지 인디케이터 설정을 위한 외형 템플릿 구현
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = .lightGray
         pageControl.currentPageIndicatorTintColor = .black
