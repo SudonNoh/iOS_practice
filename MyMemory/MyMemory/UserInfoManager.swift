@@ -10,6 +10,42 @@ struct UserInfoKey {
     static let tutorial = "TUTORIAL"
 }
 
+struct userInfoSetting: Decodable {
+    var name: String?
+    var account: String?
+    var userId: Int?
+    var profilePath: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case account = "account"
+        case userId = "user_id"
+        case profilePath = "profile_path"
+    }
+}
+
+struct decodingType: Decodable {
+    var userInfo: [String:String]
+    var resultCode: String?
+    var result: String?
+    var tokenType: String?
+    var expiresIn: Int?
+    var refreshToken: String?
+    var accessToken: String?
+    var errorMsg: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case userInfo = "user_info"
+        case resultCode = "result_code"
+        case result
+        case tokenType = "token_type"
+        case expiresIn = "expires_in"
+        case refreshToken = "refresh_token"
+        case accessToken = "access_token"
+        case errorMsg = "error_msg"
+    }
+}
+
 class UserInfoManager {
     // 연산 프로퍼티 loginId 정의
     var loginId: Int {
@@ -95,8 +131,37 @@ class UserInfoManager {
             encoding: JSONEncoding.default
         )
         
+        
+        call.response { res in
+            switch res.result {
+            case .success: debugPrint(res)
+            case let .failure(error): print(2)
+            }
+        }
+        
+        
+        /*
+        call.responseDecodable(of: decodingType.self) { res in
+            print("\n\n\n\n")
+            print(String(repeating: "-", count: 70))
+            debugPrint(res)
+            print(String(repeating: "-", count: 70))
+            print("\n\n\n\n")
+            switch res.result {
+            case .success:
+                print(1)
+            case let .failure(error):
+                print(error)
+            }
+        }
+        */
+        
         /*
         call.responseJSON { res in
+            
+            print("\n\n\n\n")
+            print(res)
+            print("\n\n\n\n")
             // 3-1. JSON 형식으로 응답했는지 확인
             let result = try! res.result.get()
             guard let jsonObject = result as? NSDictionary else {
@@ -106,6 +171,7 @@ class UserInfoManager {
             
             // 3-2. 응답 코드 확인. 0이면 성공
             let resultCode = jsonObject["result_code"] as! Int
+            print(jsonObject["user_info"] ?? "없음")
             if resultCode == 0 {
                 let user = jsonObject["user_info"] as! NSDictionary
                 
@@ -125,6 +191,7 @@ class UserInfoManager {
             }
         }
         */
+        
     }
     
     func logout() -> Bool {
